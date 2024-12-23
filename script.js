@@ -75,11 +75,13 @@ const selectFour = () => {
   select(four, six, holder4, holder6);
   shuffleArray(cartData4);
   assigneCarts(cartsFour, cartData4);
+  scoreCount = 0;
 };
 const selectSix = () => {
   select(six, four, holder6, holder4);
   shuffleArray(cartData6);
   assigneCarts(cartsSix, cartData6);
+  scoreCount = 0;
 };
 
 //assigne cartData to carts
