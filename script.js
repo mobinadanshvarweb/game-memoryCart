@@ -70,18 +70,18 @@ const select = (element1, element2, holder1, holder2) => {
   element2.style.backgroundColor = "transparent";
   holder1.style.display = "flex";
   holder2.style.display = "none";
+  scoreCount = 0;
+  score.innerText = 0;
 };
 const selectFour = () => {
   select(four, six, holder4, holder6);
   shuffleArray(cartData4);
   assigneCarts(cartsFour, cartData4);
-  scoreCount = 0;
 };
 const selectSix = () => {
   select(six, four, holder6, holder4);
   shuffleArray(cartData6);
   assigneCarts(cartsSix, cartData6);
-  scoreCount = 0;
 };
 
 //assigne cartData to carts
@@ -91,7 +91,7 @@ function shuffleArray(array) {
     [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
   }
 }
-
+shuffleArray(cartData4);
 let checkCart = null;
 let selectedCards = [];
 let lockBoard = false;
