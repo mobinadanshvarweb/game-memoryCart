@@ -4,32 +4,42 @@
   box-sizing: border-box;
   color: #ffcfef;
 }
+
 main {
   width: 100%;
   min-height: 100vh;
   background-color: #2a3335;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 main > section {
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 main > section > div {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  flex-wrap: wrap; /* چیدمان انعطاف‌پذیر برای تغییر در سایز‌های کوچک */
+  padding: 10px;
 }
+
 #header {
   flex-grow: 0;
-}
-main > section > div div {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* فاصله بین آیتم‌ها */
 }
+
 #select,
 #timer,
 #reset,
@@ -40,61 +50,72 @@ main > section > div div {
   align-items: center;
   cursor: pointer;
   border-radius: 10px;
-  min-width: 150px;
-}
-#score,
-#reset {
   padding: 8px;
+  min-width: 120px; /* کاهش عرض در حالت موبایل */
+  text-align: center;
 }
+
 #four,
 #six {
   padding: 8px;
-  width: 50%;
+  flex: 1; /* دکمه‌ها به اندازه مساوی تقسیم می‌شوند */
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 #four {
   border-right: 1px solid #ffcfef;
   background-color: #0a5db08d;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
 #six {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
 #cart-holder {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  width: 100%;
 }
+
 #holder-4,
 #holder-6 {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
-  min-width: 600px;
+  width: 90%; /* عرض پویا */
+  max-width: 800px; /* حداکثر عرض */
   min-height: 400px;
   border: 1px solid #ffcfef;
+  margin: 20px auto; /* وسط‌چین شدن در موبایل */
 }
+
 #holder-4 span {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 10px; /* فاصله بین کارت‌ها */
 }
+
 #holder-4 > span > span {
   border: 1px solid #ffcfef;
   cursor: pointer;
   position: relative;
-  width: 150px;
+  width: calc(100% - 10px); /* عرض پویا براساس ردیف 4 کارت */
   height: 100px;
   transition: transform 0.3s ease-out, opacity 0.3s ease;
 }
+
 #holder-4 > span > span::after {
   content: "";
   display: flex;
@@ -107,26 +128,118 @@ main > section > div div {
   background-color: #0a5eb0;
   z-index: 10;
 }
+
 #holder-6 {
-  display: none;
-}
-.hi {
-  width: 100px;
-  height: 100px;
-  background-color: bisque;
-  position: relative;
-}
-.hi::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background-color: aqua;
+  display: none; /* به صورت پیش‌فرض مخفی */
 }
 
 .change-z-index::after {
-  z-index: -10 !important; /* تنظیم z-index برای ::after */
+  z-index: -10 !important;
+}
+
+/* === Media Queries برای حالت ریسپانسیو === */
+
+/* حالت موبایل (عرض کمتر از 600px) */
+@media only screen and (max-width: 600px) {
+  #header {
+    flex-direction: column; /* دکمه‌ها زیر هم قرار می‌گیرند */
+    gap: 10px;
+  }
+
+  #select,
+  #reset,
+  #score {
+    min-width: 100px; /* کوچک‌تر کردن دکمه‌ها */
+    padding: 6px;
+  }
+
+  #cart-holder {
+    width: 100%; /* عرض کامل برای موبایل */
+  }
+
+  #holder-4,
+  #holder-6 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%; /* کاهش عرض برای موبایل */
+    max-width: 400px; /* حداکثر عرض */
+    border: none;
+  }
+  #holder-6 {
+    display: none;
+  }
+  #holder-4 > span {
+    flex-direction: row; /* کارت‌ها در هر ردیف افقی قرار گیرند */
+    justify-content: center;
+    gap: 5px; /* فاصله بین کارت‌ها */
+  }
+
+  #holder-4 > span > span {
+    width: 30px; /* عرض پویا براساس viewport */
+    height: 20vw; /* ارتفاع پویا براساس viewport */
+    margin: 5px 0;
+  }
+
+  #four,
+  #six {
+    font-size: 14px; /* کوچک‌تر کردن فونت دکمه‌ها */
+    padding: 5px;
+  }
+
+  #score,
+  #reset {
+    min-width: 100px;
+  }
+}
+
+/* حالت تبلت (عرض بین 600px و 992px) */
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  #header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #holder-4 > span > span {
+    width: calc(100% - 10px); /* سه کارت در هر ردیف */
+    height: 120px;
+  }
+
+  #holder-4 {
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+  }
+
+  #score,
+  #reset {
+    min-width: 130px;
+  }
+  #holder-6 {
+    display: none;
+  }
+}
+
+/* حالت دسکتاپ (عرض بیشتر از 992px) */
+@media only screen and (min-width: 992px) {
+  #header {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #holder-4 > span > span {
+    width: calc(100% - 10px); /* چهار کارت در هر ردیف */
+    height: 150px;
+  }
+
+  #holder-4 {
+    width: 80%;
+    max-width: 800px;
+  }
+
+  #score,
+  #reset {
+    min-width: 150px;
+  }
 }
