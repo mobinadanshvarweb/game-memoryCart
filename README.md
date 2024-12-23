@@ -141,7 +141,7 @@ This project is licensed under the **MIT License**. You’re free to use, modify
 
 For any questions or feedback, feel free to reach out:
 
-- **LinkedIn**: [MobinaDaneshvar](www.linkedin.com/in/mobinadaneshvar)
+- **LinkedIn**: [MobinaDaneshvar](https://www.linkedin.com/in/mobinadaneshvar/)
 
 - **GitHub**: [MobinaDaneshvar](https://github.com/mobinadanshvarweb)
 
@@ -149,4 +149,3 @@ Enjoy the game and happy coding! 🎉
 
 ---
 
-این ریدمی را به همراه اسکرین‌شات‌های مناسب برای پروژه‌تان استفاده کنید تا کاربران بتوانند به راحتی با برنامه شما آشنا شوند.
