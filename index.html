@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=restart_alt"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Memory Cart</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div id="header">
+          <span id="select">
+            <span id="four" onclick="selectFour()">4*4</span>
+            <span id="six" onclick="selectSix()">6*6</span></span
+          >
+          <div>
+            <!-- <span id="timer">timer</span> -->
+            <span id="reset">
+              <span onclick="restart()" class="material-symbols-outlined">
+                restart_alt
+              </span>
+            </span>
+          </div>
+          <span id="score"
+            >score:
+            <span id="myScore">0</span>
+          </span>
+        </div>
+        <div id="cart-holder">
+          <div id="holder-4">
+            <span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="holder-6">holder-6</div>
+        </div>
+        <!-- <div class="hi"></div> -->
+      </section>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
