@@ -41,8 +41,6 @@ main > section > div {
 }
 
 #select,
-#timer,
-#reset,
 #score {
   border: 1px solid #ffcfef;
   display: flex;
@@ -53,7 +51,7 @@ main > section > div {
   min-width: 120px;
   text-align: center;
 }
-#reset,
+
 #score {
   padding: 8px;
 }
@@ -149,7 +147,6 @@ main > section > div {
   }
 
   #select,
-  #reset,
   #score {
     min-width: 100px;
     padding: 6px;
@@ -191,14 +188,14 @@ main > section > div {
     padding: 5px;
   }
 
-  #score,
-  #reset {
+  #score {
     min-width: 100px;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 992px) {
   #header {
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -218,8 +215,7 @@ main > section > div {
     max-width: 600px;
   }
 
-  #score,
-  #reset {
+  #score {
     min-width: 130px;
   }
   #holder-6 {
